@@ -13,7 +13,7 @@ def call() {
     // Run withSonarQubeEnv to inject SonarQube environment variables
     withSonarQubeEnv(credentialsId: sonarqubeCredentialsId) {
         sh """
-        ${tool 'SonarQube'}  // Optionally specify SonarQube scanner tool installation if configured in Jenkins
+        ${tool 'sonar-scanner'}  // Optionally specify SonarQube scanner tool installation if configured in Jenkins
         sonar-scanner -Dsonar.projectName=${projectName} \
                       -Dsonar.projectKey=${projectKey} \
                       -Dsonar.java.binaries=.
