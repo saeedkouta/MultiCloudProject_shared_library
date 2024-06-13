@@ -13,7 +13,7 @@ def call() {
     // Run withSonarQubeEnv to inject SonarQube environment variables
     withSonarQubeEnv(credentialsId: sonarqubeCredentialsId) {
         // Assuming you have a SonarQube tool installation named 'SonarQubeScanner'
-        def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
         
         sh """
         ${scannerHome}/bin/sonar-scanner \
