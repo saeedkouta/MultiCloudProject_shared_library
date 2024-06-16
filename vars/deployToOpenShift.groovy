@@ -9,7 +9,6 @@ def call(String OpenShiftCredentialsID, String openshiftClusterurl, String opens
             sh "oc apply -f deployment.yml"
             sh "oc apply -f service.yml"
             sh "oc expose svc ivolve-project-service"
-
     }
 
 }
